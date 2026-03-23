@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  be:
+    build:
+      context: ./BE
+      dockerfile: Dockerfile
+    container_name: prerender_poc_be
+    ports:
+      - "4000:4000"
+
+  fe:
+    build:
+      context: ./FE
+      dockerfile: Dockerfile
+    container_name: prerender_poc_fe
+    depends_on:
+      - be
+    ports:
+      - "8080:80"
