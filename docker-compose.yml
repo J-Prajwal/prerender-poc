@@ -17,4 +17,4 @@ services:
     depends_on:
       - be
     ports:
-      - "80:80"
+      - "8080:80"
